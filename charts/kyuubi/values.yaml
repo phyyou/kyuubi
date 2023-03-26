@@ -131,6 +131,22 @@ kyuubiConf:
   # See example at conf/log4j2.xml.template https://kyuubi.readthedocs.io/en/master/deployment/settings.html#logging for more details
   log4j2: ~
 
+  # extraFiles is a map of key-value pairs, where the key is the file name and the value is the file content
+  # You can use this to add extra files to the kyuubiConfDir like hive-site.xml, kyuubi-session-etl.conf, etc.
+  # Example:
+  #
+  # extraFiles:
+  #   hive-site.xml: |
+  #     <configuration>
+  #       <property>
+  #         <name>hive.metastore.uris</name>
+  #         <value>thrift://metastore-host:9083</value>
+  #       </property>
+  #     </configuration>
+  #
+  # See https://kyuubi.readthedocs.io/en/master/deployment/settings.html for more details
+  extraFiles: {}
+
 # Environment variables (templated)
 env: []
 envFrom: []
